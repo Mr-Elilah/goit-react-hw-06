@@ -5,6 +5,7 @@ import css from "./Contact.module.css";
 
 export default function Contact({ id, name, number }) {
   const dispatch = useDispatch();
+
   const handleDelete = () => {
     dispatch(delateContact(id));
   };
