@@ -6,7 +6,7 @@ import "./App.css";
 import "../../index.css";
 
 export default function App() {
-  const contacts = useSelector((state) => state.contacts.list);
+  const contacts = useSelector((state) => state.contacts.items);
   const filter = useSelector((state) => state.filter.value);
 
   const searchedContacts = contacts.filter(
