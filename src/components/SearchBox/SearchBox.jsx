@@ -1,6 +1,11 @@
 import css from "./SearchBox.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter } from "../../Redux/filterSlice";
 
-export default function SearchBox({ value, onChange }) {
+export default function SearchBox() {
+  const dispatch = useDispatch();
+  const filter = useSelector((state) => state.filter.value);
+
   return (
     <div className={css.searchBox}>
       <label className={css.label} htmlFor="text">
@@ -10,8 +15,8 @@ export default function SearchBox({ value, onChange }) {
         className={css.input}
         id="text"
         type="text"
-        value={value}
-        onChange={onChange}
+        value={filter}
+        onChange={(e) => dispatch(setFilter(e.target.value))}
         autoComplete="off"
       />
     </div>
